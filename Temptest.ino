@@ -1,4 +1,5 @@
 
+// kevin mcaleer 20 June 2016
 #define aref_voltage 3.3
 
 // BUG - temperature is reading 279.68 degrees C which is obviously wrong
