@@ -1,11 +1,13 @@
 
-// kevin mcaleer 20 June 2016
+// Author Kevin McAleer
+// 20 June 2016 - inital version
+// 26 June 2016 - removed temp calculaation bug
 
 // Only include below if its running off 3.3volts - its supposed to give a more accurate reading of tempature, but I didnt find that
 //
 // #define aref_voltage 3.3
-
-// BUG - temperature is reading 279.68 degrees C which is obviously wrong
+// 
+//
 
 int lightSensorPin = A0;
 int tempSensorPin = A1; // select the input pin for the thermometer
