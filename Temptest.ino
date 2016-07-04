@@ -17,7 +17,7 @@ int tempSensorPin = A1; // select the input pin for the thermometer
 int temperature = 0;
 float temperatureC = 0.0;
 int light = 0;
-int ledPin = 8;
+int ledPin = 13;
 
 void setup() {
   // put your setup code here, to run once:
@@ -39,9 +39,9 @@ void loop() {
   //float voltage = temperature * 5.0; // use aref_voltage if 3.3 volts
   //voltage /=1024.0;
   //temperatureC = (voltage - 0.5) * 100;
-  digitalWrite(ledPin, LOW);
-  delay(1000);
   digitalWrite(ledPin, HIGH);
+  delay(1000);
+  digitalWrite(ledPin, LOW);
   delay(1000);
  
   //Serial.print("temp: ");
