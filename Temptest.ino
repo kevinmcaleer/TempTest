@@ -5,9 +5,10 @@
 
 // Only include below if its running off 3.3volts - its supposed to give a more accurate reading of tempature, but I didnt find that
 //
-// #define aref_voltage 3.3
+#define aref_voltage 3.3
+// set above to be 5.0 if 5 volts
 // 
-//
+// Need to add code to write out lines via SPI port
 
 // include the SPI Library:
 #include "SPI.h"
@@ -36,7 +37,7 @@ void loop() {
   
   temperature = analogRead(tempSensorPin);
   light = analogRead(lightSensorPin);
-  float voltage = temperature * 5.0; // use aref_voltage if 3.3 volts
+  float voltage = temperature * aref_voltage; // use aref_voltage if 3.3 volts
   voltage /=1024.0;
   temperatureC = (voltage - 0.5) * 100;
   digitalWrite(ledPin, HIGH);
