@@ -25,7 +25,7 @@ void setup() {
   //Serial.begin(9600); 
   // If you want to set the aref to something other than 5v
   //analogReference(EXTERNAL);
-  //SPI.begin();
+  SPI.begin();
   pinMode(ledPin,OUTPUT);
 }
 
@@ -34,16 +34,20 @@ void loop() {
 
   // read the value from the sensor
   
-  //temperature = analogRead(tempSensorPin);
-  //light = analogRead(lightSensorPin);
-  //float voltage = temperature * 5.0; // use aref_voltage if 3.3 volts
-  //voltage /=1024.0;
-  //temperatureC = (voltage - 0.5) * 100;
+  temperature = analogRead(tempSensorPin);
+  light = analogRead(lightSensorPin);
+  float voltage = temperature * 5.0; // use aref_voltage if 3.3 volts
+  voltage /=1024.0;
+  temperatureC = (voltage - 0.5) * 100;
   digitalWrite(ledPin, HIGH);
   delay(1000);
   digitalWrite(ledPin, LOW);
   delay(1000);
- 
+
+  SPI.write("temp: ");
+  SPI.write(temperature);
+  SPI.write(", light level: ");
+  SPI.write(light);
   //Serial.print("temp: ");
   //Serial.print(temperature);
   //Serial.print(", temperature Degrees C: ");
