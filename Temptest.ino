@@ -20,6 +20,8 @@
 //    version
 //    
 
+// BUG doesn't compile writeln and readln not valid comnands for UART
+
 // include the SPI Library:
 #include "SPI.h"
 
