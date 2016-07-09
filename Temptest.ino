@@ -40,6 +40,9 @@ void setup() {
   Serial.begin(9600); 
   // If you want to set the aref to something other than 5v
   //analogReference(EXTERNAL);
+  while (!Serial) {
+    ; // wait for serial port to connect. Needed for native USB port only
+  }
   SPI.begin();
   pinMode(ledPin,OUTPUT);
 }
