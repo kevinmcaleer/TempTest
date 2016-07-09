@@ -42,7 +42,6 @@ void setup() {
   //analogReference(EXTERNAL);
   SPI.begin();
   pinMode(ledPin,OUTPUT);
-  Serial.print("Hello");
 }
 
 
