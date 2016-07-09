@@ -21,6 +21,7 @@
 //    
 
 // BUG doesn't compile writeln and readln not valid comnands for UART
+// Fixed. Now displays version information on bootup.
 
 // include the SPI Library:
 #include "SPI.h"
