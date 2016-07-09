@@ -32,7 +32,7 @@ int temperature = 0;
 float temperatureC = 0.0;
 int light = 0;
 int ledPin = 13;
-string command;
+String command = "";
 
 void setup() {
   // put your setup code here, to run once:
@@ -44,9 +44,19 @@ void setup() {
   pinMode(ledPin,OUTPUT);
 }
 
+
+
+
 void readCommand()
 {
-  Serial.readln(command);  
+  //command = Serial.read();  
+  while (Serial.available()) {
+    delay(3);  //delay to allow buffer to fill 
+    if (Serial.available() >0) {
+      char c = Serial.read();  //gets one byte from serial buffer
+      command += c; //makes the string readString
+    } 
+  }
 }
 
 void temp()
