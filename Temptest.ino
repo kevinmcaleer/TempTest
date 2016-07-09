@@ -43,6 +43,7 @@ void setup() {
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
   }
+  Serial.println("GreenHouse Robot, Version 0.01");
   SPI.begin();
   pinMode(ledPin,OUTPUT);
 }
