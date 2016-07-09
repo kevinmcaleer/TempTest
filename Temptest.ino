@@ -91,16 +91,20 @@ void loop() {
 
   // loop read command
   readCommand();
-  switch (command) {
-    case "temp":
+  char cmd  = 'n';
+  if (command = "temp") cmd = 't'; 
+  if (command = "light") cmd = 'l';
+  
+  switch (cmd) {
+    case 't':
     // do something with temperature
     break;
-    case "light":
+    case 'l':
     // do something with light
     break;
     default:
     // do something if command not recognised
-    Serial.writeln("command not recognised");
+    Serial.println("command not recognised");
     break;
     }
   
