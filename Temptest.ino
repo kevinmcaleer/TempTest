@@ -106,7 +106,7 @@ void loop() {
   // put your main code here, to run repeatedly:
 
   // read the value from the sensor
-  
+  toggleLed();
   temperature = analogRead(tempSensorPin);
   light = analogRead(lightSensorPin);
   float voltage = temperature * aref_voltage; // use aref_voltage if 3.3 volts
