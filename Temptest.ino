@@ -59,7 +59,7 @@ void toggleLed()
     ledState = true;
     digitalWrite(ledPin, HIGH);
   }
-  else
+  if(ledState == true)
   {
     ledState = false;
     digitalWrite(ledPin, LOW);
@@ -70,6 +70,8 @@ void readCommand()
 {
   //command = Serial.read();  
   // command = "";
+  toggleLed();
+  //Serial.flush();
   while (Serial.available()) {
     //delay(3);  //delay to allow buffer to fill 
     if (Serial.available() >0) {
