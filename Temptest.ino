@@ -83,7 +83,7 @@ void readCommand()
         command = "";
       }
       Serial.print(c); // used to be Serial.write(s)
-      Serial.print(command);
+      Serial.println(command);
       toggleLed();
       command += c; //makes the string readString
     } 
