@@ -118,8 +118,8 @@ void loop() {
   // loop read command
   readCommand();
   char cmd  = 'n';
-  if (command = "temp") cmd = 't'; 
-  if (command = "light") cmd = 'l';
+  if (command == "temp") cmd = 't'; 
+  if (command == "light") cmd = 'l';
   
   switch (cmd) {
     case 't':
