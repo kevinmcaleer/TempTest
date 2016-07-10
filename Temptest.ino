@@ -79,6 +79,7 @@ void readCommand()
       if (c == 10 || c == 13) 
       {
         Serial.print("Arduino received: ");
+        Serial.print(c);
         Serial.print(command);
         command = "";
       }
