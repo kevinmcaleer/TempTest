@@ -44,6 +44,7 @@ void setup() {
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
   }
+  delay(1000);
   Serial.println("GreenHouse Robot, Version 0.01");
   SPI.begin();
   pinMode(ledPin,OUTPUT);
@@ -59,6 +60,7 @@ void readCommand()
     delay(3);  //delay to allow buffer to fill 
     if (Serial.available() >0) {
       char c = Serial.read();  //gets one byte from serial buffer
+      Serial.write(c);
       command += c; //makes the string readString
     } 
   }
