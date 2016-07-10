@@ -56,10 +56,17 @@ void setup() {
 void readCommand()
 {
   //command = Serial.read();  
+  // command = "";
   while (Serial.available()) {
     delay(3);  //delay to allow buffer to fill 
     if (Serial.available() >0) {
       char c = Serial.read();  //gets one byte from serial buffer
+      if (c == '\n') 
+      {
+        Serial.print("Arduino received: ");
+        Serial.print(command);
+        command = "";
+      }
       Serial.write(c);
       command += c; //makes the string readString
     } 
