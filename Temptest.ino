@@ -80,7 +80,7 @@ void readCommand()
       {
         Serial.print("Arduino received: ");
         Serial.print(c);
-        Serial.print(command);
+        Serial.println(command);
         command = "";
       }
       Serial.print(c); // used to be Serial.write(s)
