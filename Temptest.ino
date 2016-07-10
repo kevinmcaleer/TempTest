@@ -76,7 +76,7 @@ void readCommand()
     //delay(3);  //delay to allow buffer to fill 
     if (Serial.available() >0) {
       char c = Serial.read();  //gets one byte from serial buffer
-      if (c == '\n') 
+      if (c == 10 || c == 13) 
       {
         Serial.print("Arduino received: ");
         Serial.print(command);
