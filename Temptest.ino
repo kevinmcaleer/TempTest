@@ -130,6 +130,10 @@ void loop() {
     break;
     default:
     // do something if command not recognised
+    Serial.print("command: ");
+    Serial.print(command);
+    Serial.print(", cmd: ");
+    Serial.println(cmd);
     Serial.println("command not recognised");
     break;
     }
