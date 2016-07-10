@@ -33,7 +33,7 @@ int temperature = 0;
 float temperatureC = 0.0;
 int light = 0;
 int ledPin = 13;
-int ledState = false;
+boolean ledState = false;
 String command = "";
 
 void setup() {
@@ -80,7 +80,7 @@ void readCommand()
       {
         Serial.print("Arduino received: ");
         Serial.print(c);
-        Serial.print(command);
+        Serial.println(command);
         command = "";
       }
       Serial.print(c); // used to be Serial.write(s)
