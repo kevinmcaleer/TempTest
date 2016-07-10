@@ -112,11 +112,8 @@ void loop() {
   float voltage = temperature * aref_voltage; // use aref_voltage if 3.3 volts
   voltage /=1024.0;
   temperatureC = (voltage - 0.5) * 100;
-  digitalWrite(ledPin, HIGH);
-  delay(1000);
-  digitalWrite(ledPin, LOW);
-  delay(1000);
 
+  toggleLed();
   // loop read command
   readCommand();
   char cmd  = 'n';
