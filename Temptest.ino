@@ -2,11 +2,12 @@
 // Author Kevin McAleer
 // 20 June 2016 - inital version
 // 26 June 2016 - removed temp calculaation bug
+// 10 July 2016 - Added serial/uart communication
 
 // Only include below if its running off 3.3volts - its supposed to give a more accurate reading of tempature, but I didnt find that
 //
 #define aref_voltage 3.3
-// set above to be 5.0 if 5 volts
+// set above to be 5.0 if 5 volts - it can't be 5v as Raspberry Pi GPIO only works at 3.3 
 // 
 // Need to add code to write out lines via UART port Digital Pins 0 and 1 (RX, TX)
 //
@@ -25,7 +26,6 @@
 
 // include the SPI Library:
 #include "SPI.h"
-
 
 int lightSensorPin = A0;
 int tempSensorPin = A1; // select the input pin for the thermometer
@@ -71,7 +71,7 @@ void readCommand()
   //command = Serial.read();  
   // command = "";
   while (Serial.available()) {
-    delay(3);  //delay to allow buffer to fill 
+    //delay(3);  //delay to allow buffer to fill 
     if (Serial.available() >0) {
       char c = Serial.read();  //gets one byte from serial buffer
       if (c == '\n') 
@@ -80,7 +80,8 @@ void readCommand()
         Serial.print(command);
         command = "";
       }
-      Serial.write(c);
+      Serial.print(c); // used to be Serial.write(s)
+      Serial.print(command);
       toggleLed();
       command += c; //makes the string readString
     } 
