@@ -128,6 +128,10 @@ void loop() {
     case 'l':
     // do something with light
     break;
+    case 'n': // do nothing
+    toggleLed();
+    delay(100);
+    break;
     default:
     // do something if command not recognised
     Serial.print("command: ");
