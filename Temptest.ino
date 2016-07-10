@@ -33,6 +33,7 @@ int temperature = 0;
 float temperatureC = 0.0;
 int light = 0;
 int ledPin = 13;
+int ledState = false;
 String command = "";
 
 void setup() {
@@ -51,7 +52,19 @@ void setup() {
 }
 
 
-
+void toggleLed()
+{
+  if(ledState == false)
+  {
+    ledState = true;
+    digitalWrite(ledPin, HIGH);
+  }
+  else
+  {
+    ledState = false;
+    digitalWrite(ledPin, LOW);
+  }   
+}
 
 void readCommand()
 {
@@ -68,6 +81,7 @@ void readCommand()
         command = "";
       }
       Serial.write(c);
+      toggleLed();
       command += c; //makes the string readString
     } 
   }
