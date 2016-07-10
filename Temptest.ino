@@ -33,7 +33,7 @@ int temperature = 0;
 float temperatureC = 0.0;
 int light = 0;
 int ledPin = 13;
-int ledState = false;
+boolean ledState = false;
 String command = "";
 
 void setup() {
