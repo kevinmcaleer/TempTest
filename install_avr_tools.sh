@@ -1,5 +1,5 @@
 apt-get update
-apt-get install bison flex -y
+apt-get install bison flex arduino arduino.mk avrdude -y
 wget http://download.savannah.gnu.org/release/avrdude/avrdude-6.2.tar.gz
 tar xfv avrdude-6.2.tar.gz
 cd avrdude-6.2/
